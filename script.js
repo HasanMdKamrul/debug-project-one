@@ -12,9 +12,15 @@ const getElement = (id) => {
 
 // ** slider handler
 const handleSlider = (event) => {
+  // console.log(event)
   const charCountEl = getElement("char-count");
   charCountEl.innerText = event;
+
+  generatePassword()
+  
 };
+
+// handleSlider()
 
 // ** checkbox handler
 const handleCheckbox = () => {
@@ -38,12 +44,11 @@ const handleCheckbox = () => {
 // ** password generator
 const generatePassword = () => {
   const passwordEl = getElement("password");
-
   let charCount = getElement("char-count").innerText;
 
   +charCount
 
-  console.log(charCount)
+  // console.log(charCount)
   // console.log(charSet)
   let password = "";
 
