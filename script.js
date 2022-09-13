@@ -36,18 +36,24 @@ const handleCheckbox = () => {
 
 // ** password generator
 const generatePassword = () => {
-  const passwordEl = getElement("pass");
+  const passwordEl = getElement("password");
 
-  const charCount = getElement("char-count");
+  let charCount = getElement("char-count").innerText;
+
+  +charCount
+
+  
 
   let password = "";
 
   for (let i = 0; i < charCount.length; i++) {
+    console.log(charSet.length)
     const randomNumber = Math.floor(Math.random() * charSet.length);
-    password += charSet.substring(randomNumber, randomNumber + 1);
+
+    password += charSet.substring(randomNumber, randomNumber + 8);
   }
 
-  passwordEl.innerText = password;
+  passwordEl.value = password;
 };
 
 // ** display password
